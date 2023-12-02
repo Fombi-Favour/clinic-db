@@ -45,3 +45,9 @@ CREATE TABLE medical_history_treatment (
     FOREIGN KEY (medical_history_id) REFERENCES medical_histories(id),
     FOREIGN KEY (treatment_id) REFERENCES treatments(id)
 );
+
+CREATE INDEX idx_medical_history_id ON invoices(medical_history_id);
+CREATE INDEX idx_patients_name ON patients(name);
+CREATE INDEX idx_treatments_type ON treatments(type);
+CREATE INDEX idx_invoices_generated_at ON invoices(generated_at);
+CREATE INDEX idx_invoice_items_invoice_id ON invoice_items(invoice_id);
